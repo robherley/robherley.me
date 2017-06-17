@@ -1,1 +1,1 @@
-web: update.sh
+web: chmod +x update.sh && ./update.sh
