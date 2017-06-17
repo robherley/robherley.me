@@ -14,4 +14,4 @@ cd .. && mv robherley-ui/build/ build/
 rm -rf robherley-ui/
 echo "${GREEN}🚀  Pushing to Heroku...${RESET}"
 git push heroku
-echo "${GREEN}✅ ${RESET}"
+echo "${GREEN}✅ DONE${RESET}"
