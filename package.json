@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Node.js server running robherley.me",
   "engines": {
-    "node": "6.10.2"
+    "node": "8.0.0"
   },
   "main": "index.js",
   "scripts": {

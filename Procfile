@@ -1,1 +1,1 @@
-web: chmod +x update.sh && ./update.sh
+web: node index.js
