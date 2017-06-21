@@ -1,13 +1,20 @@
 .App-header {
-  background-color: #152935;
-  height: 75px;
+  /*background-color: #152935;*/
+  height: 50px;
   color: white;
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
+  background: #3d70b2; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #3d70b2 0%, #41d6c3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #3d70b2 0%,#41d6c3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #3d70b2 0%,#41d6c3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d70b2', endColorstr='#41d6c3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 .App-title {
   font-family: 'Overpass', sans-serif;
   padding-left: 20px;
-  padding-top: 20px;
-  font-size: 35px;
+  padding-top: 5px;
+  font-size: 30px;
   position: absolute;
 }

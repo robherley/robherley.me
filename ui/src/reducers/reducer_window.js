@@ -2,7 +2,11 @@
 import _ from 'lodash';
 
 // Constants
-import { ADD_WINDOW, DELETE_WINDOW, CHANGE_LAYOUT } from '../actions';
+import {
+  ADD_WINDOW,
+  DELETE_WINDOW,
+  CHANGE_LAYOUT
+} from '../actions';
 
 // Config
 import { default_grid } from '../config/grid_config';

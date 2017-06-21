@@ -14,7 +14,7 @@ class App extends Component {
         <div className="App-title">
           rob herley
         </div>
-        <Particles params={particle_config} height="75px"/>
+        <Particles params={particle_config} height="50px"/>
         <Grid />
       </div>
     );

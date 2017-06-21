@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import GridWindow from './GridWindow';
 
 // Actions
 import { addWindow, deleteWindow, changeLayout } from '../actions/index';
@@ -26,11 +27,7 @@ class Grid extends Component {
         >
         {this.props.currentLayout.map((box) =>
           <div key={box.i}>
-            <span className="Grid-titlebar"></span>
-            {(box.static !== true) ? <span className="Grid-button" onClick={() => this.props.deleteWindow(box.i)}></span> : <span></span>}
-            <div className="Grid-content">
-              <button onClick={() => this.props.addWindow({i: `${Math.random()}`, x: 2, y: 0, w: 2, h: 2})}>Click Me!</button>
-            </div>
+            <GridWindow title="Hello-World" content={`This is window: ${box.i}`} id={box.i}/>
           </div>
         )}
       </ResponsiveReactGridLayout>
