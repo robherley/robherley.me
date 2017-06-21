@@ -1,0 +1,23 @@
+{
+  "name": "robherley.me-ui",
+  "author": "robherley",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-grid-layout": "^0.14.6",
+    "react-particles-js": "^1.5.0",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "robherley-server",
+  "name": "robherley.me-server",
   "version": "1.0.0",
   "description": "Node.js server running robherley.me",
   "engines": {
@@ -10,7 +10,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.15.2"
+    "express": "4.15.2",
+    "morgan": "^1.8.2"
   },
   "repository": {
     "type": "git",

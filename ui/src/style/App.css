@@ -1,0 +1,13 @@
+.App-header {
+  background-color: #152935;
+  height: 75px;
+  color: white;
+}
+
+.App-title {
+  font-family: 'Overpass', sans-serif;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 35px;
+  position: absolute;
+}
