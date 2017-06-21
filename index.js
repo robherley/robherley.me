@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const app = express();
 
+app.enable('trust proxy');
+
 const requireHTTPS = (req, res, next) => {
     if (!req.secure) {
         return res.redirect('https://' + req.get('host') + req.url);
