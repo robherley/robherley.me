@@ -11,4 +11,4 @@ Instructions for running locally:
 
 Just run the ui with `npm start` in the `ui` subdirectory.
 
-<center>![tinyrick](https://i.imgur.com/ZUEAzmo.gif)</center>
+<center><img src="https://i.imgur.com/ZUEAzmo.gif" width="100%"/></center>
