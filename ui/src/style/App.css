@@ -1,20 +1,104 @@
-.App-header {
-  /*background-color: #152935;*/
-  height: 50px;
-  color: white;
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
-  background: #3d70b2; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #3d70b2 0%, #41d6c3 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #3d70b2 0%,#41d6c3 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #3d70b2 0%,#41d6c3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d70b2', endColorstr='#41d6c3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-}
-
 .App-title {
   font-family: 'Overpass', sans-serif;
   padding-left: 20px;
-  padding-top: 5px;
+  padding-top: 10px;
   font-size: 30px;
   position: absolute;
+}
+
+.Grid-button {
+  top: 0;
+  right: 0;
+  margin: 3px;
+  margin-right: 6px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: #89253e;
+  border-radius: 20px;
+}
+
+.Grid-button:hover {
+    -moz-box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+}
+
+.Grid-titlebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 21px;
+  position: fixed;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+  text-align: center;
+  padding-top: 2px;
+  font-size: 14px;
+  background: #3a6186;
+}
+
+.Grid-content {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/*
+  Code below is edited react-grid CSS from source with minor tweaks
+*/
+
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+.react-grid-item {
+  color: #222;
+  background-color: #f5f7fa;
+  transition: all 200ms ease;
+  transition-property: left, top;
+  border-radius: 6px;
+  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.10);
+  overflow: auto;
+}
+.react-grid-item.cssTransforms {
+  transition-property: transform;
+}
+.react-grid-item.resizing {
+  z-index: 1;
+  will-change: width, height;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: #5a6872;
+  opacity: 0.2;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
 }

@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
 
-import Grid from '../containers/Grid.js'
-import { particle_config } from '../config/particle_config'
+import Grid from '../containers/Grid.js';
+import Header from './Header';
 
-import '../style/App.css';
-
-class App extends Component {
-
+export default class App extends Component {
   render() {
     return (
-      <div className="App-header">
-        <div className="App-title">
-          rob herley
-        </div>
-        <Particles params={particle_config} height="50px"/>
+      <div>
+        <Header />
         <Grid />
       </div>
     );
   }
 }
-
-export default App;

@@ -16,9 +16,9 @@ export function deleteWindow(windowID) {
   };
 }
 
-export function changeLayout(newLayout) {
+export function changeLayout(updatedLayout) {
   return {
     type: CHANGE_LAYOUT,
-    payload: newLayout
+    payload: updatedLayout
   };
 }
