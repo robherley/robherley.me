@@ -19,7 +19,9 @@ export const headerStyle = (name) => {
       color: 'white',
       boxShadow: '0 6px 12px 0 rgba(0,0,0,0.10)',
       background: theme[0],
+      // eslint-disable-next-line
       background: `-webkit-linear-gradient(to right, ${theme[0]}, ${theme[1]})`,
+      // eslint-disable-next-line
       background: `linear-gradient(to right, ${theme[0]}, ${theme[1]})`
   }
 };

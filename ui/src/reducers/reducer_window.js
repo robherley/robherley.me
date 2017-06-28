@@ -8,10 +8,7 @@ import {
   CHANGE_LAYOUT
 } from '../actions';
 
-// Config
-import { default_grid } from '../config/grid_config';
-
-export default function(state = default_grid, action) {
+export default function(state = [], action) {
   switch(action.type) {
     case ADD_WINDOW:
       return [...state, action.payload];
