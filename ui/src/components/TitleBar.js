@@ -6,13 +6,14 @@ const Title = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 21px;
+  height: 20px;
   position: fixed;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   color: #fff;
   text-align: center;
   padding-top: 2px;
+  margin-bottom: 20px;
   font-size: 14px;
   background: #3a6186;
 `;
