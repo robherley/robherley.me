@@ -7,7 +7,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "concurrently -n '☁️ SERVER,💻 CLIENT' -c 'cyan,green' 'nodemon ./index.js' 'npm start --prefix ./ui/'",
+    "deploy": "cd ui && npm run build && cd .. && git push heroku master"
   },
   "dependencies": {
     "express": "4.15.2",
@@ -22,5 +24,8 @@
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
 }
