@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "concurrently -n '☁️ SERVER,💻 CLIENT' -c 'cyan,green' 'nodemon ./index.js' 'npm start --prefix ./ui/'",
-    "deploy": "cd ui && npm run build && cd .. && git push heroku master"
+    "deploy": "cd ui && npm run build && cd .. && git push"
   },
   "dependencies": {
     "express": "4.15.2",
