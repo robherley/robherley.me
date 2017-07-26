@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import logger from 'redux-logger'
+import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-import App from './components/App';
+import App from './App';
 import reducers from './reducers';
 
-import './style/index.css'
+import './index.css'
 
 const store = createStore(
   reducers,
-  applyMiddleware(logger)
+  composeWithDevTools()
 )
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>
+  </Provider> 
   , document.getElementById('root'));
