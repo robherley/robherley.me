@@ -1,39 +1,52 @@
 import React from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Layout } from "antd";
-import SideNav from "./components/SideNav";
 
+import SideNav from "./components/SideNav";
+import MobileNav from "./components/MobileNav";
+import Animate from './components/AnimatedWrapper';
+import { updateWidth } from './actions';
 import * as Views from "./views";
 
 const { Content } = Layout;
-const displayView = {
-  home: <Views.Home />,
-  projects: <Views.Projects />,
-  resume: <Views.Resume />,
-  contact: <Views.Contact />
+
+class App extends React.Component {
+  componentDidMount() {
+    window.addEventListener("resize", this.windowResize.bind(this));
+  }
+
+  windowResize() {
+    this.props.updateWidth(window.innerWidth);
+  }
+
+  render() {
+    let isMobile = this.props.width < 768;
+    let view = this.props.view;
+    return (
+      <Layout>
+        {isMobile ? <MobileNav /> : <SideNav /> }
+        <Layout style={{ marginLeft: !isMobile? 200 : 0, background: "#55555e" }}>
+          <Content
+            style={{
+              margin: "0px 32px",
+              overflow: "initial",
+              height: "100vh"
+            }}
+          >
+              <Animate>{view === 'home' ? <Views.Home /> : null}</Animate>
+              <Animate>{view === 'projects' ? <Views.Projects /> : null}</Animate>
+              <Animate>{view === 'resume' ? <Views.Resume /> : null}</Animate>
+              <Animate>{view === 'contact' ? <Views.Contact /> : null}</Animate>
+          </Content>
+        </Layout>
+      </Layout>
+    );
+  }
 }
 
-
-const App = props =>
-  <Layout>
-    <SideNav />
-    <Layout style={{ marginLeft: 200, background: "#55555e" }}>
-      <Content
-        style={{
-          margin: "24px 16px 0",
-          overflow: "initial",
-          background: "#55555e"
-        }}
-      >
-        {displayView[props.view]}
-      </Content>
-      {/* <Footer style={{ textAlign: "center", color: '#c2c2c6' }}>"Why join the navy if you can be a pirate?" - Steve Jobs</Footer> */}
-    </Layout>
-  </Layout>;
-
-const mapStateToProps = (state) => ({
-  view: state.view
+const mapStateToProps = state => ({
+  view: state.view,
+  width: state.width
 });
 
-
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {updateWidth})(App);

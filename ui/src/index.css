@@ -11,3 +11,23 @@ body {
   background-color: #4CB8AA;
   border-right: 3px solid rgba(255,255,255,0.6);
 }
+
+.mountChange-enter {
+  opacity: 0.01;
+}
+
+.mountChange-enter.mountChange-enter-active {
+  opacity: 1;
+  transition: opacity .2s ease-in;
+}
+
+.mountChange-appear {
+  opacity: 0.01;
+  padding-top: 100vh;
+}
+
+.mountChange-appear.mountChange-appear-active {
+  opacity: 1;
+  padding-top: 0px;
+  transition: padding-top .5s ease-in, opacity .5s ease-in;
+}

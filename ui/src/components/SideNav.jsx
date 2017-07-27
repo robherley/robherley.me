@@ -29,7 +29,7 @@ const SideNav = props => {
       overflow: "auto",
       height: "100vh",
       position: "fixed",
-      backgroundColor: "#303036",
+      backgroundColor: "#2A2D34",
       left: 0
     }}
   >
@@ -37,7 +37,7 @@ const SideNav = props => {
     <LogoText>Robert Herley</LogoText>
     <Menu
       theme="dark"
-      style={{ backgroundColor: "#303036" }}
+      style={{ backgroundColor: "#2A2D34" }}
       mode="inline"
       defaultSelectedKeys={["home"]}
       onClick={e => props.updateView(e.key)}

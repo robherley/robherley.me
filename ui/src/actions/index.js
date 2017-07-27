@@ -3,3 +3,9 @@ export const updateView = (newView) => ({
   payload: 
     newView
 });
+
+export const updateWidth = (newWidth) => ({
+  type: 'UPDATE_WIDTH',
+  payload:
+    newWidth
+})
