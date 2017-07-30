@@ -4,6 +4,8 @@ import { Row, Col } from "antd";
 import styled from "styled-components";
 import _ from 'lodash';
 
+import { updateColor } from '../actions';
+
 const TitleBar = styled.div`
   display: flex;
   justify-content: center;
@@ -38,8 +40,8 @@ const Dot = styled.div`
   margin-left: ${props => props.loc};
   float: left;
   background-color: ${props => props.color};
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   border-radius: 20px;
   &:hover {
     filter: brightness(1.5);
@@ -100,26 +102,27 @@ class Home extends Component {
       showContent: false,
       currentColor: 'coral' 
     }
-  }
-
-  componentDidMount(){
-    setInterval(() => this.setState({blink: !this.state.blink}), 500)
-    setInterval(() => this.updateAnimation(), 600)
+    this.update = setInterval(() => this.updateAnimation(), 600);
+    this.blink = setInterval(() => this.setState({blink: !this.state.blink}), 500)
   }
 
   updateAnimation(){
+    console.log('update!')
     this.setState({frame: this.state.frame+1})
     if(this.state.frame === 8){
       this.setState({showContent: true})
     }
+    if(this.state.frame > 9){
+      clearInterval(this.update)
+    }
   }
 
-  updateColor(color){
-    this.setState({currentColor: color})
+  componentWillUnmount(){
+    clearInterval(this.update);
+    clearInterval(this.blink);
   }
 
   render() {
-    console.log(this.state.currentColor)
     return (
       <Row
         type="flex"
@@ -134,9 +137,7 @@ class Home extends Component {
           <TitleBar>Terminal</TitleBar>
           <Content style={{overflow: 'auto'}}>
             <Row>
-              <Text c="#6761A8">root</Text>
-              <Text c="#009DDC">@</Text>
-              <Text pad c="#009B72">robherley.me</Text>
+              <Text pad c={this.props.color}>root@robherley.me</Text>
                ~ {"whoami".slice(0, this.state.frame)}
               {this.state.frame < 8 ? <Cursor blink={this.state.blink}/> : null}
             </Row>
@@ -172,7 +173,7 @@ class Home extends Component {
                       {_.map(langArray, el => 
                         <Text
                           key={el[0]} 
-                          onMouseEnter={() => this.updateColor(el[1])} 
+                          onMouseEnter={() => this.props.updateColor(el[1])} 
                           pad 
                           c={el[1]}>{el[0]}</Text>)}
                     </Row>
@@ -183,7 +184,7 @@ class Home extends Component {
                       {_.map(webArray, el => 
                         <Text
                           key={el[0]}    
-                          onMouseEnter={() => this.updateColor(el[1])} 
+                          onMouseEnter={() => this.props.updateColor(el[1])} 
                           pad 
                           c={el[1]}>{el[0]}</Text>)}
                     </Row>
@@ -194,24 +195,22 @@ class Home extends Component {
                       {_.map(miscArray, el => 
                         <Text 
                           key={el[0]} 
-                          onMouseEnter={() => this.updateColor(el[1])} 
+                          onMouseEnter={() => this.props.updateColor(el[1])} 
                           pad 
                           c={el[1]}>{el[0]}</Text>)}
                     </Row>
                   </Col>
                 </Row>
                 <Row>
-                  <Text c="#6761A8">root</Text>
-                  <Text c="#009DDC">@</Text>
-                  <Text pad c="#009B72">robherley.me</Text>
-                   ~ {this.state.frame > 8 ? <Cursor blink={this.state.blink}/> : null}
+                  <Text pad c={this.props.color}>root@robherley.me</Text>
+                   ~  {this.state.frame > 8 ? <Cursor blink={this.state.blink}/> : null}
                 </Row>
               </div> 
             : null}
           </Content>
-          <Dot color="#009DDC" loc="10px" />
-          <Dot color="#6761A8" loc="30px" />
-          <Dot color="#009B72" loc="50px" />
+          <Dot color="#ED6B5F" loc="10px" />
+          <Dot color="#F6C150" loc="30px" />
+          <Dot color="#62C755" loc="50px" />
         </Window>
       </Row>
     );
@@ -219,7 +218,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  width: state.width
+  width: state.width,
+  color: state.color
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { updateColor })(Home);

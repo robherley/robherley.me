@@ -1,64 +1,99 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Layout, Menu, Icon } from "antd";
+import { Layout, Icon, Tooltip } from "antd";
 import styled from "styled-components";
 
 import { updateView } from "../actions";
-import * as SVG from "../svg";
 
 const { Sider } = Layout;
 
-const Logo = styled.img`
-  padding: 20px;
-  width: 100%;
-`;
+const Select = styled.div`
+  border-radius: 3px;
+  padding: 1em 1em;
+  margin: 25px 25px;
+  background: ${props => props.fill? props.color : 'transparent'};
+  color: ${props => props.fill? '#2A2D34' : props.color};
+  border: 2px solid ${props => props.color};
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  &:hover {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  &:focus {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  &:active {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+`
 
-const LogoText = styled.p`
-  display: flex;
-  justify-content: center;
-  padding-bottom: 15px;
-  font-family: 'Zilla Slab', serif;
-  font-size: 26px;
-  color: white;
-`;
+const StyledIcon = styled(Icon)`
+  margin: 0px;
+  font-size: 30px;
+`
 
 const SideNav = props => {
   return(
   <Sider
+    width='60px'
     style={{
       overflow: "auto",
       height: "100vh",
       position: "fixed",
       backgroundColor: "#2A2D34",
-      left: 0
+      left: 0,
+      display: 'flex',
+      alignItems: 'center'
     }}
   >
-    <Logo src={SVG.Logo} alt="logo" />
-    <LogoText>Robert Herley</LogoText>
-    <Menu
-      theme="dark"
-      style={{ backgroundColor: "#2A2D34" }}
-      mode="inline"
-      defaultSelectedKeys={["home"]}
-      onClick={e => props.updateView(e.key)}
-    >
-      <Menu.Item key="home">
-        <Icon type="home" />
-        <span className="nav-text">Home</span>
-      </Menu.Item>
-      <Menu.Item key="projects">
-        <Icon type="code-o" />
-        <span className="nav-text">Projects</span>
-      </Menu.Item>
-      <Menu.Item key="resume">
-        <Icon type="file-text" />
-        <span className="nav-text">Resume</span>
-      </Menu.Item>
-      <Menu.Item key="contact">
-        <Icon type="share-alt" />
-        <span className="nav-text">Contact</span>
-      </Menu.Item>
-    </Menu>
-  </Sider>)}
+    <Tooltip placement="right" title="Home" overlayStyle={{color: 'purple'}}>
+      <Select 
+        color={props.color}
+        onClick={() => props.updateView('home')}
+        fill={props.view === 'home'}
+      >
+        <StyledIcon type="home"/>
+      </Select>
+    </Tooltip>
+    <Tooltip placement="right" title="Projects">
+      <Select 
+        color={props.color}
+        onClick={() => props.updateView('projects')}
+        fill={props.view === 'projects'}
+      >
+        <StyledIcon type="code-o"/>
+      </Select>
+    </Tooltip>
+    <Tooltip placement="right" title="Resume">
+      <Select 
+        color={props.color}
+        onClick={() => props.updateView('resume')}
+        fill={props.view === 'resume'}
+      >
+        <StyledIcon type="file-text"/>
+      </Select>
+    </Tooltip>
+    <Tooltip placement="right" title="Contact">
+      <Select 
+        color={props.color}
+        onClick={() => props.updateView('contact')}
+        fill={props.view === 'contact'}
+      >
+        <StyledIcon type="share-alt"/>
+      </Select>
+    </Tooltip>
+</Sider>)}
 
-export default connect(null, {updateView})(SideNav);
+const mapStateToProps = state => ({
+  color: state.color,
+  view: state.view
+});
+
+export default connect(mapStateToProps, { updateView })(SideNav);

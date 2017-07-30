@@ -9,3 +9,9 @@ export const updateWidth = (newWidth) => ({
   payload:
     newWidth
 })
+
+export const updateColor = (newColor) => ({
+  type: 'UPDATE_COLOR',
+  payload:
+    newColor
+})

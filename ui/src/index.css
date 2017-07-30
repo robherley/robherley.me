@@ -1,4 +1,4 @@
-@import "~antd/dist/antd.css";
+@import "~antd/dist/antd.min.css";
 
 body {
   margin: 0;
@@ -8,7 +8,7 @@ body {
 }
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected {
-  background-color: #4CB8AA;
+  background-color: rgba(0,0,0,0);
   border-right: 3px solid rgba(255,255,255,0.6);
 }
 

@@ -25,7 +25,7 @@ class App extends React.Component {
     return (
       <Layout>
         {isMobile ? <MobileNav /> : <SideNav /> }
-        <Layout style={{ marginLeft: !isMobile? 200 : 0, background: "#55555e" }}>
+        <Layout style={{ marginLeft: !isMobile? 95 : 0, background: "#55555e" }}>
           <Content
             style={{
               margin: "0px 32px",
@@ -49,4 +49,4 @@ const mapStateToProps = state => ({
   width: state.width
 });
 
-export default connect(mapStateToProps, {updateWidth})(App);
+export default connect(mapStateToProps, { updateWidth })(App);
