@@ -18,10 +18,6 @@ const LogoText = styled.p`
   color: white;
 `;
 
-const Text = styled.span`
-    display: none
-`
-
 const MobileNav = props => {
   return (
     <div>
@@ -48,7 +44,7 @@ const MobileNav = props => {
           backgroundColor: "#2A2D34",
           display: "flex",
           justifyContent: "center",
-          fontSize: "24"
+          fontSize: "24px"
         }}
       >
         <Menu.Item key="home" style={{ border: "none" }}>

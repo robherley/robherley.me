@@ -5,7 +5,7 @@ const Animate = props =>
   <CSSTransitionGroup
     transitionName="mountChange"
     transitionAppear={true}
-    transitionAppearTimeout={500}
+    transitionAppearTimeout={1000}
     transitionEnter={true}
     transitionEnterTimeout={500}
     transitionLeave={false}
