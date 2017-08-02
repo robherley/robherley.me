@@ -25,8 +25,8 @@ class App extends React.Component {
     return (
       <Layout>
         {isMobile ? <MobileNav /> : <SideNav /> }
-        <Layout style={{ marginLeft: !isMobile? 95 : 0, background: "#55555e" }}>
-          <Content
+         <Layout style={{ marginLeft: !isMobile? 95 : 0, background: "#55555e" }}> 
+           <Content
             style={{
               margin: "0px 32px",
               overflow: "initial",
@@ -36,7 +36,7 @@ class App extends React.Component {
               <Animate>{view === 'home' ? <Views.Home /> : null}</Animate>
               <Animate>{view === 'projects' ? <Views.Projects /> : null}</Animate>
               <Animate>{view === 'resume' ? <Views.Resume /> : null}</Animate>
-              <Animate>{view === 'contact' ? <Views.Contact /> : null}</Animate>
+              <Animate>{view === 'contact' ? <Views.Contact /> : null}</Animate> 
           </Content>
         </Layout>
       </Layout>
@@ -46,7 +46,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({
   view: state.view,
-  width: state.width
+  width: state.width,
+  color: state.color
 });
 
 export default connect(mapStateToProps, { updateWidth })(App);

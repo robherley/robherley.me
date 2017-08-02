@@ -7,11 +7,6 @@ body {
   background: #55555e;
 }
 
-.ant-menu.ant-menu-dark .ant-menu-item-selected {
-  background-color: rgba(0,0,0,0);
-  border-right: 3px solid rgba(255,255,255,0.6);
-}
-
 .mountChange-enter {
   opacity: 0.01;
 }

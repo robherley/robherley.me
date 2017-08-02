@@ -4,11 +4,6 @@ import { Icon, Col, Row } from "antd";
 import styled from "styled-components";
 
 import { updateView } from "../actions";
-import * as SVG from "../svg";
-
-const Logo = styled.img`
-  height: 32px
-`;
 
 const LogoText = styled.p`
   display: flex;
@@ -32,6 +27,12 @@ const StyledIcon = styled(Icon)`
   font-size: 22px;
 `
 
+const Avatar = styled.img`
+  width: 32px;
+  border-radius: 3px !important;
+  margin-top: 6px;
+`
+
 const MobileNav = props => {
   return (
     <div>
@@ -39,11 +40,13 @@ const MobileNav = props => {
         type="flex" 
         align="middle" 
         justify="center" 
-        gutter={24}
+        gutter={8}
         style={{height: '40px', backgroundColor: '#2A2D34', width: '100%', margin: '0px'}}
         >
         <Col>
-          <Logo src={SVG.Logo} alt="logo" />
+          <Avatar 
+            src="https://github.com/robherley.png" 
+            alt="robert's github avatar" />
         </Col>
         <Col>
           <LogoText>Robert Herley</LogoText>

@@ -57,7 +57,7 @@ const Cursor = styled.div`
 
 const Avatar = styled.img`
   width: 75%;
-  border-radius: 75%;
+  border-radius: 20px;
   padding: 10px;
 `
 
@@ -107,7 +107,6 @@ class Home extends Component {
   }
 
   updateAnimation(){
-    console.log('update!')
     this.setState({frame: this.state.frame+1})
     if(this.state.frame === 8){
       this.setState({showContent: true})
