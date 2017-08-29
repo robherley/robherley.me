@@ -35,7 +35,6 @@ class App extends React.Component {
           >
               <Animate>{view === 'home' ? <Views.Home /> : null}</Animate>
               <Animate>{view === 'projects' ? <Views.Projects /> : null}</Animate>
-              <Animate>{view === 'resume' ? <Views.Resume /> : null}</Animate>
               <Animate>{view === 'contact' ? <Views.Contact /> : null}</Animate> 
           </Content>
         </Layout>

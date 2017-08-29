@@ -147,7 +147,7 @@ class Home extends Component {
                     {this.props.width <= 768 ?
                       null :
                       <Avatar 
-                        src="https://github.com/robherley.png" 
+                        src="/avatar.png" 
                         alt="robert's github avatar" />}
                   </Col>
                   <Col sm={5} xs={8} style={{paddingTop: '10px', color: '#7c7c7c'}}>

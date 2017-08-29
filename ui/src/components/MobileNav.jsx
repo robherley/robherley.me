@@ -62,7 +62,7 @@ const MobileNav = props => {
             <StyledIcon type="home"/>
           </Select>
         </Col>
-        <Col>
+        {/* <Col>
           <Select 
           color={props.color}
           onClick={() => props.updateView('projects')}
@@ -70,11 +70,11 @@ const MobileNav = props => {
           >
             <StyledIcon type="code-o"/>
           </Select>
-        </Col>
+        </Col> */}
         <Col>
           <Select 
             color={props.color}
-            onClick={() => props.updateView('resume')}
+            onClick={() => window.open("/resume.pdf")}
             fill={props.view === 'resume'}
           >
             <StyledIcon type="file-text"/>

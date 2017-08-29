@@ -62,7 +62,7 @@ const SideNav = props => {
         <StyledIcon type="home"/>
       </Select>
     </Tooltip>
-    <Tooltip placement="right" title="Projects">
+    {/* <Tooltip placement="right" title="Projects">
       <Select 
         color={props.color}
         onClick={() => props.updateView('projects')}
@@ -70,11 +70,11 @@ const SideNav = props => {
       >
         <StyledIcon type="code-o"/>
       </Select>
-    </Tooltip>
+    </Tooltip> */}
     <Tooltip placement="right" title="Resume">
       <Select 
         color={props.color}
-        onClick={() => props.updateView('resume')}
+        onClick={() => window.open("/resume.pdf", "Rob's Resume")}
         fill={props.view === 'resume'}
       >
         <StyledIcon type="file-text"/>
