@@ -12,7 +12,7 @@
     "deploy": "cd ui && npm run build && cd .. && git push"
   },
   "dependencies": {
-    "express": "4.15.2",
+    "express": "4.15.5",
     "morgan": "^1.8.2"
   },
   "repository": {
