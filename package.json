@@ -26,6 +26,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^3.5.0",
+    "gh-pages": "^1.2.0"
   }
 }

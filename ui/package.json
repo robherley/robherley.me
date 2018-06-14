@@ -18,10 +18,12 @@
     "styled-components": "^2.1.0"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build"
   }
 }
